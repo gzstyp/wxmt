@@ -1,0 +1,53 @@
+{
+	"pages": [
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "首页"
+			}
+		},
+		{
+			"path": "pages/order/order",
+			"style": {
+				"navigationBarTitleText": "水西天香"
+			}
+		},{
+			"path": "pages/my/my",
+			"style": {
+				"navigationBarTitleText": "我的"
+			}
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "美团外卖",
+		"navigationBarBackgroundColor": "#FFFFFF",
+		"backgroundColor": "#FFFFFF"
+	},
+	"tabBar" : {
+		"color":"#999794",
+		"selectedColor":"#33312e",
+		"borderStyle":"white",
+		"backgroundColor":"#fafafa",
+		"list":[
+			{
+				"pagePath":"pages/index/index",
+				"iconPath":"./static/tab/index_normal.png",
+				"selectedIconPath":"static/tab/index_select.png",
+				"text":"首页"
+			},
+			{
+				"pagePath":"pages/order/order",
+				"iconPath":"./static/tab/order_normal.png",
+				"selectedIconPath":"static/tab/order_select.png",
+				"text":"水西天香"
+			},
+			{
+				"pagePath":"pages/my/my",
+				"iconPath":"./static/tab/my_normal.png",
+				"selectedIconPath":"static/tab/my_select.png",
+				"text":"我的"
+			}
+		]
+	}
+}
