@@ -4,8 +4,8 @@
 		 <Search></Search>
 		 <!-- :Xxx表示绑定数据,表示父组件的变量名为 preferListData 的数据是 listPreferData  -->
 		 <Preference :preferListData="listPreferData"></Preference>
-		 <Title></Title>
 		 <Delicacy></Delicacy>
+		 <Title></Title>
 		 <Takeout/></Takeout>
 	</view>
 </template>
@@ -15,8 +15,8 @@
 	//1.导入子组件
 	import Search from './components/search.vue';
 	import Preference from './components/preference.vue';
-	import Title from './components/title.vue';
 	import Delicacy from './components/delicacy.vue';
+	import Title from './components/title.vue';
 	import Takeout from './components/takeout.vue';
 	//引入接口url,大括号{}接收变量
 	import {httpReq} from '../../api/httpReq.js';
@@ -26,8 +26,8 @@
 		components:{
 			Search,
 			Preference,
-			Title,
 			Delicacy,
+			Title,
 			Takeout
 		},
 		/* 一般情况下,是在父组件获取数据再传到子组件!!!???父组件给子组件传值!!!,所以把请求放在父组件来 */
