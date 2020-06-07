@@ -18,6 +18,9 @@
 	import Title from './components/title.vue';
 	import Delicacy from './components/delicacy.vue';
 	import Takeout from './components/takeout.vue';
+	//引入接口url,大括号{}接收变量
+	import {httpReq} from '../../api/httpReq.js';
+	import {urls} from '../../api/urls.js';
 	export default {
 		//2.注册组件
 		components:{
@@ -35,9 +38,7 @@
 			}
 		},
 		/* 这个是微信小程序的方法 */
-		onLoad() {
-
-		},
+		onLoad() {},
 		/* el 被新创建的 vm.$el 替换，并挂载到实例上去之后调用该钩子 */
 		mounted() {},
 		/* 实例已经创建完成之后被调用 */
@@ -45,37 +46,14 @@
 			this.preference();
 		},
 		methods: {
-			demo1 : function(){
-				uni.request({
-					url : 'http://api.fwtai.com/storage/getListData',
-					method : 'GET',
-					data : {},
-					header: {
-					    'custom-header': 'hello' //自定义请求头信息
-					},
-					success : function(data){
-						console.info(data.data.code);
-					},
-					fail : function(err) {
-						
-					},
-					complete : function(data){
-						
-					}
-				});
-			},
 			preference : function(){
 				var _this = this;
-				uni.request({
-					url : 'http://api.fwtai.com/storage/getListData',
-					method : 'GET',
-					data : {}
-				}).then((data) =>{
+				httpReq.get(urls.home.getListData,{current:1,pageSize:20}).then((data) =>{
 					_this.listPreferData = data[1].data;
-				}).catch((err) => {
+				}).catch((err) =>{
 					console.info(err);
 				});
-			},
+			}
 		}
 	}
 </script>

@@ -20,6 +20,7 @@
 			<text>{{preferListData.code || ''}}</text>
 			<br/>
 			<text>{{preferListData.msg || ''}}{{preferListData.code || ''}}</text>
+			<br/>
 		</view>
 	</view>
 </template>
@@ -52,29 +53,12 @@
 						"image":"../../static/images/scroll-view-04.png",
 						"lable":"美颜美味"
 					}
-				],
-				reqData : null
+				]
 			}
 		},
 		methods:{
-			getListData : function(){
-				var _this = this;
-				uni.request({
-				    url: 'http://api.fwtai.com/storage/getListData', //仅为示例，并非真实接口地址。
-				    data: {
-				        text: 'uni.request'
-				    },
-				    header: {
-				        'custom-header': 'hello' //自定义请求头信息
-				    },
-				    success: (data) => {
-						_this.reqData = data.data.msg + ',' +  data.data.code
-				    }
-				});
-			}
 		},
-		created() {
-			this.getListData();
+		created(){
 		}
 	}
 </script>
