@@ -4,8 +4,8 @@
 		 <Search></Search>
 		 <!-- :Xxx表示绑定数据,表示父组件的变量名为 preferListData 的数据是 listPreferData  -->
 		 <Preference :preferListData="listPreferData"></Preference>
-		 <Delicacy></Delicacy>
 		 <Title></Title>
+		 <Delicacy></Delicacy>
 		 <Takeout/></Takeout>
 	</view>
 </template>

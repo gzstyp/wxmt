@@ -14,14 +14,14 @@
 				</block>
 			</view>
 		</scroll-view>
-		<view>
+		<!-- 父组件向子组件传数据 <view>
 			<text>{{preferListData.msg || ''}}</text>
 			<br/>
 			<text>{{preferListData.code || ''}}</text>
 			<br/>
 			<text>{{preferListData.msg || ''}}{{preferListData.code || ''}}</text>
 			<br/>
-		</view>
+		</view> -->
 	</view>
 </template>
 

@@ -23,3 +23,6 @@
 	[子组件]显示数据:
 	{{preferListData.msg || ''}}
 	
+	显示单位:
+	1upx,1rpx
+	
