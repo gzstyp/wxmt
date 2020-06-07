@@ -3,10 +3,10 @@
 		<!-- 3.渲染 -->
 		 <Search></Search>
 		 <!-- :Xxx表示绑定数据,表示父组件的变量名为 preferListData 的数据是 listPreferData  -->
-		 <Preference :preferListData="listPreferData"/>
-		 <Title/>
-		 <Delicacy/>
-		 <Takeout/>
+		 <Preference :preferListData="listPreferData"></Preference>
+		 <Title></Title>
+		 <Delicacy></Delicacy>
+		 <Takeout/></Takeout>
 	</view>
 </template>
 <!-- 父组件向子组件传递数据，是通过:Xxx="数据" ,子组件接收方是通过 props:{ 数据 : null } -->
@@ -38,13 +38,11 @@
 		onLoad() {
 
 		},
-		/* el 被新创建的 vm.$el 替换，并挂载到实例上去之后调用该钩子,推荐使用 */
-		mounted() {
-			this.preference();
-		},
+		/* el 被新创建的 vm.$el 替换，并挂载到实例上去之后调用该钩子 */
+		mounted() {},
 		/* 实例已经创建完成之后被调用 */
 		created() {
-			
+			this.preference();
 		},
 		methods: {
 			demo1 : function(){
@@ -52,6 +50,9 @@
 					url : 'http://api.fwtai.com/storage/getListData',
 					method : 'GET',
 					data : {},
+					header: {
+					    'custom-header': 'hello' //自定义请求头信息
+					},
 					success : function(data){
 						console.info(data.data.code);
 					},
@@ -61,21 +62,6 @@
 					complete : function(data){
 						
 					}
-				});
-			},
-			demo2 : function(){
-				var _this = this;
-				uni.request({
-				    url: 'http://api.fwtai.com/storage/getListData', //仅为示例，并非真实接口地址。
-				    data: {
-				        text: 'uni.request'
-				    },
-				    header: {
-				        'custom-header': 'hello' //自定义请求头信息
-				    },
-				    success: (data) => {
-						console.info(data.data.msg + ',' +  data.data.code);
-				    }
 				});
 			},
 			preference : function(){
